@@ -1,0 +1,68 @@
+<html>
+<head>
+</head>
+<body>
+
+<form method="post" action="">
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit" />
+</form>
+<table width="900" align="center">
+  <tr>
+    <td>
+<table>
+  <tr>
+    <th>Rank</th>
+    <th>Player</th>
+    <th>Wins</th>
+    <th>Losses</th>
+  </tr>
+  {% for player in ranked %}
+  <tr>
+    <td align="center" width="50">{{ player.rank }}</td>
+    <td align="center" width="200">{{ player }}</td>
+    <td align="center" width="80">{{ player.num_wins }}</td>
+    <td align="center" width="80">{{ player.num_losses }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% if unranked %}
+<br>
+<br>
+Unranked
+<table>
+  <tr>
+    <th>Player</th>
+    <th>Wins</th>
+    <th>Losses</th>
+  </tr>
+  {% for player in unranked %}
+  <tr>
+    <td>{{ player }}</td>
+    <td>{{ player.num_wins }}</td>
+    <td>{{ player.num_losses }}</td>
+  </tr>
+  {% endfor %}
+
+</table>
+{% endif %}
+</td>
+<td valign="top">
+  <b>Recent games:</b><br>
+  {% for game in games %}
+  {{ forloop.counter }}.
+  {{ game.winning_player.first_name }}{% if game.winning_player.rank %}({{ game.winning_player.rank }}){% endif %}
+  beat {{ game.losing_player.first_name }}{% if game.losing_player.rank %}({{ game.losing_player.rank }}){% endif %}
+  {{ game.winning_points }} {{ game.losing_points }}
+  <br>
+  {% endfor %}
+  <br>
+  <br>
+  <b>Recent changes:</b><br>
+  {% for rank in rank_changes %}
+  {{ forloop.counter }}. {{ rank }}<br>
+  {% endfor %}
+</td>
+</tr>
+</table>
