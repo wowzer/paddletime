@@ -1,10 +1,9 @@
+import os
+
+PROJECT_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
-
-ADMINS = ()
-
-MANAGERS = ADMINS
-
+TEMPLATE_DEBUG = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -12,17 +11,26 @@ DATABASES = {
     }
 }
 
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, "media")
+MEDIA_URL = '/m/'
+STATIC_ROOT = os.path.join(PROJECT_ROOT, "static")
+STATIC_URL = '/s/'
+
+TEMPLATE_DIRS = (
+    os.path.join(PROJECT_ROOT, 'templates'),
+)
+
+ADMINS = (
+)
+
+MANAGERS = ADMINS
+
 TIME_ZONE = 'America/Los_Angeles'
 LANGUAGE_CODE = 'en-us'
 SITE_ID = 1
 USE_I18N = False
 USE_L10N = True
 USE_TZ = True
-
-MEDIA_ROOT = '****'
-MEDIA_URL = '****'
-STATIC_ROOT = '****'
-STATIC_URL = '****'
 
 STATICFILES_DIRS = ()
 
@@ -54,10 +62,6 @@ ROOT_URLCONF = 'pingpong.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'pingpong.wsgi.application'
-
-TEMPLATE_DIRS = (
-    '****',
-)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
