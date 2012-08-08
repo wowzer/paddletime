@@ -21,27 +21,6 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, 'templates'),
 )
 
-class Dev(Settings):
-    PROJECT_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
-
-    DEBUG = True
-    TEMPLATE_DEBUG = True
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': 'test.db',
-        }
-    }
-
-    MEDIA_ROOT = os.path.join(PROJECT_ROOT, "media")
-    MEDIA_URL = '/m/'
-    STATIC_ROOT = os.path.join(PROJECT_ROOT, "static")
-    STATIC_URL = '/s/'
-
-    TEMPLATE_DIRS = (
-        os.path.join(PROJECT_ROOT, 'templates'),
-    )
-
 ADMINS = (
 )
 
