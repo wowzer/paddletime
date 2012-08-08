@@ -1,3 +1,4 @@
+from configurations import Settings
 import os
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
@@ -20,6 +21,27 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, 'templates'),
 )
 
+class Dev(Settings):
+    PROJECT_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+
+    DEBUG = True
+    TEMPLATE_DEBUG = True
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'test.db',
+        }
+    }
+
+    MEDIA_ROOT = os.path.join(PROJECT_ROOT, "media")
+    MEDIA_URL = '/m/'
+    STATIC_ROOT = os.path.join(PROJECT_ROOT, "static")
+    STATIC_URL = '/s/'
+
+    TEMPLATE_DIRS = (
+        os.path.join(PROJECT_ROOT, 'templates'),
+    )
+
 ADMINS = (
 )
 
@@ -37,7 +59,7 @@ STATICFILES_DIRS = ()
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 SECRET_KEY = ')4@(059kt^d&amp;3^6$nu+3bcm#5ztc2rxl7_lqtynmwn*-67%e2g'
