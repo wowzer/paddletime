@@ -1,5 +1,5 @@
-pingpong
-========
+paddletime
+==========
 
 DB setup:
 ---------

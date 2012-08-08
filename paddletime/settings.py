@@ -59,10 +59,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'pingpong.urls'
+ROOT_URLCONF = 'paddletime.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'pingpong.wsgi.application'
+WSGI_APPLICATION = 'paddletime.wsgi.application'
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -71,8 +71,9 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pingpong',
     'django.contrib.admin',
+
+    'paddletime',
 )
 
 # A sample logging configuration. The only tangible logging

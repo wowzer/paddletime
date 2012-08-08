@@ -4,7 +4,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', 'pingpong.views.home', name='home'),
+    url(r'^$', 'paddletime.views.home', name='home'),
     url(r'^admin/', include(admin.site.urls)),
 )
 

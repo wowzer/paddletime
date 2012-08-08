@@ -1,9 +1,9 @@
 from django.contrib import admin
 
-from pingpong.models import Game
-from pingpong.models import Player
-from pingpong.models import RankChange
-from pingpong.models import WeeklyRank
+from paddletime.models import Game
+from paddletime.models import Player
+from paddletime.models import RankChange
+from paddletime.models import WeeklyRank
 
 
 admin.site.register(Game)

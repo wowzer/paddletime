@@ -1,6 +1,6 @@
 from django import forms
 
-from pingpong.models import Game
+from paddletime.models import Game
 
 class GameForm(forms.ModelForm):
     class Meta:

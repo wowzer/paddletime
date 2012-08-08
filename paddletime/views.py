@@ -2,10 +2,10 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
-from pingpong.forms import GameForm
-from pingpong.models import Game
-from pingpong.models import Player
-from pingpong.models import RankChange
+from paddletime.forms import GameForm
+from paddletime.models import Game
+from paddletime.models import Player
+from paddletime.models import RankChange
 
 def home(request):
     form = GameForm(request.POST or None)

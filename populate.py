@@ -2,12 +2,12 @@ import random
 import argparse
 
 from django.core.management import setup_environ
-from pingpong import settings
+from paddletime import settings
 setup_environ(settings)
 
-from pingpong.models import Player
-from pingpong.models import Game
-from pingpong.models import RankChange
+from paddletime.models import Player
+from paddletime.models import Game
+from paddletime.models import RankChange
 
 def getNames(file_name):
     f = open(file_name, 'r')
@@ -59,7 +59,7 @@ def printRankedPlayers():
                                                      p.last_name)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(prog = 'PingPong Populator')
+    parser = argparse.ArgumentParser(prog = 'PaddleTime Populator')
     parser.add_argument('action',
                         choices=['names',
                                  'games',
